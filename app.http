@@ -1,0 +1,56 @@
+### GET ALL POSTS
+GET http://localhost:3000/blogs/posts
+Content-Type: : application/json
+
+### GET A SPECIFIC POST
+GET http://localhost:3000/blogs/posts/:id
+Content-Type: application/json
+
+### GET POSTS BASED ON WHO LOGGED IN
+GET http://localhost:3000/blogs/userposts
+Content-Type: application/json
+Authorization: Bearer 
+
+### LOGIN A USER
+POST http://localhost:3000/blogs/login
+Content-Type: application/json
+
+{
+    "username": "rohan",
+    "password": "rohan@2001"
+}
+### REGISTER A USER
+POST http://localhost:3000/blogs/register
+Content-Type: application/json
+
+{
+    "username": "rohit",
+    "password": "rohit@2001"
+}
+
+### POST A BLOG(WITH USER AUTHENTICATION)
+POST http://localhost:3000/blogs/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvaGFuIiwiaWF0IjoxNzI0NTE5MDU2fQ.FtVZcUqBndknbZm65Mu51KWMLPa7WDMjRYeiS6jAjCE
+
+{
+  "title": "My First Updated Blog Post",
+  "content": "This is the content of my first blog post."
+}
+
+### EDIT A BLOG(WITH USER AUTHENTICATION)
+PUT http://localhost:3000/blogs/posts/:id
+Authorization: Bearer
+Content-Type: application/json
+
+{
+  "title": "Updated Blog Post Title",
+  "content": "This is the updated content for the blog post."
+}
+
+### DELETE A USER(WITH USER AUTHENTICATION)
+DELETE http://localhost:3000/blogs/posts/936e85b5-6073-47cb-bdd2-9180598de4b1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvaGFuIiwiaWF0IjoxNzI0NTE5MTg5fQ.a7TOWp-163PPKVIHFRgO6PsZ-5yNBjIMp1OHRDGHjRk
+Content-Type: : application/json
+
+
