@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "predeploy": "npm rebuild sqlite3"
+    "build": "npm install --build-from-source",
+    "postinstall": "npm rebuild sqlite3"
   },
   "keywords": [],
   "author": "",
